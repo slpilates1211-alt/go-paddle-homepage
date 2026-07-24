@@ -95,7 +95,7 @@
   @media(max-width:480px){.steps{grid-template-columns:1fr}}
   .step{
     position:relative;background:var(--white);border:1px solid var(--line);border-radius:var(--radius);
-    padding:22px 20px;box-shadow:var(--shadow);transition:.2s}
+    padding:22px 20px;box-shadow:var(--shadow);transition:.2s;display:flex;flex-direction:column}
   .step:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);border-color:#cfe6f2}
   .step .num{display:flex;align-items:center;gap:10px;margin-bottom:4px}
   .step .num .badge{width:40px;height:40px;border-radius:50%;flex:0 0 auto;
@@ -103,14 +103,15 @@
     display:grid;place-items:center;font-size:16px;font-weight:800}
   .step .num .lbl{font-size:11px;font-weight:800;letter-spacing:.14em;color:var(--muted)}
   .step h3{font-size:18px;font-weight:800;color:var(--navy);margin:8px 0 6px;letter-spacing:-.01em}
-  .step p{font-size:13.5px;color:var(--muted)}
-  .step .tag{display:inline-block;margin-top:14px;font-size:12px;font-weight:700;color:var(--ocean);
+  .step p{font-size:13.5px;color:var(--muted);margin-bottom:14px}
+  .step .tag{align-self:flex-start;margin-top:auto;font-size:12px;font-weight:700;color:var(--ocean);
     background:var(--sky);padding:5px 10px;border-radius:8px}
 
   /* ---------- Level detail cards ---------- */
   .levels{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:34px}
   @media(max-width:820px){.levels{grid-template-columns:1fr}}
-  .lv{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+  .lv{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column}
+  .lv0{align-self:start}
   .lv-head{padding:22px 24px;display:flex;align-items:center;gap:14px;color:#fff}
   .lv1 .lv-head{background:linear-gradient(120deg,#0e86c4,#29abe2)}
   .lv2 .lv-head{background:linear-gradient(120deg,#ed1c24,#f4595f)}
@@ -120,14 +121,14 @@
     display:grid;place-items:center;font-weight:800;font-size:15px;flex:0 0 auto}
   .lv-head h3{font-size:19px;font-weight:800;letter-spacing:-.01em}
   .lv-head small{display:block;font-size:12.5px;font-weight:600;opacity:.85;margin-top:2px}
-  .lv-body{padding:20px 24px 24px}
+  .lv-body{padding:20px 24px 24px;flex:1;display:flex;flex-direction:column}
   .req-title{font-size:12px;font-weight:800;letter-spacing:.05em;color:var(--muted);text-transform:uppercase;margin:2px 0 10px}
   ul.req{list-style:none;display:grid;gap:9px}
   ul.req li{position:relative;padding-left:24px;font-size:14.3px;color:var(--ink)}
   ul.req li::before{content:"";position:absolute;left:0;top:8px;width:14px;height:14px;border-radius:5px;
     background:var(--sky);border:2px solid var(--ocean)}
   ul.req li b{color:var(--navy)}
-  .lv-meta{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 6px}
+  .lv-meta{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 6px;margin-top:auto}
   .metapill{font-size:12.5px;font-weight:700;background:var(--sand);border:1px solid var(--line);
     color:var(--navy);padding:6px 11px;border-radius:9px}
   .can-do{margin-top:16px;background:var(--sand);border:1px dashed #cfe0ea;border-radius:12px;padding:14px 16px}
@@ -161,12 +162,13 @@
   ul.mrq li::before{content:"";position:absolute;left:2px;top:9px;width:7px;height:7px;border-radius:50%;background:var(--ocean)}
   ul.mrq li b{color:var(--navy);font-weight:700}
   ul.mrq li a{color:var(--ocean);font-weight:700;border-bottom:1px solid #bcdff0}
-  .pqi-btn{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;
-    background:linear-gradient(135deg,var(--ocean),var(--ocean-2));color:#fff;border-radius:14px;
-    padding:18px 24px;margin-top:24px;text-align:center;box-shadow:var(--shadow);transition:.18s}
-  .pqi-btn:hover{transform:translateY(-2px);box-shadow:var(--shadow-lg)}
-  .pqi-btn .big{font-size:18px;font-weight:800;white-space:nowrap}
-  .pqi-btn .small{font-size:12.5px;opacity:.85}
+  .pqi-btn{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;
+    background:linear-gradient(135deg,#ed1c24,#c8151c);color:#fff;border-radius:14px;
+    padding:16px 24px;margin-top:24px;text-align:center;
+    box-shadow:0 10px 24px rgba(237,28,36,.30);transition:.18s}
+  .pqi-btn:hover{transform:translateY(-2px);box-shadow:0 14px 30px rgba(237,28,36,.42)}
+  .pqi-btn .big{font-size:17px;font-weight:800;white-space:nowrap;color:#fff}
+  .pqi-btn .small{font-size:12px;font-weight:600;color:#fff;opacity:.9}
   /* ---------- TOP 플로팅 버튼 ---------- */
   #topBtn{position:fixed;right:22px;bottom:22px;z-index:60;border:0;cursor:pointer;
     display:none;flex-direction:column;align-items:center;justify-content:center;gap:1px;
@@ -209,20 +211,6 @@
 </head>
 <body>
 
-<!-- NAV -->
-<header class="nav">
-  <div class="wrap nav-inner">
-    <div class="brand">
-      <div>대한패들보드연맹<small>KSUPA SUP 강사과정</small></div>
-    </div>
-    <nav class="nav-links">
-      <a href="#overview">과정 시스템</a>
-      <a href="#levels">단계별 자격</a>
-      <a href="#info">민간자격정보</a>
-    </nav>
-  </div>
-</header>
-
 <!-- HERO -->
 <div class="hero">
   <div class="wrap">
@@ -235,8 +223,7 @@
       <span class="chip">🏄 <b>KSUPA SUP 전문강사</b> 자격 과정</span>
     </div>
     <div class="hero-cta">
-      <a href="#levels" class="btn btn-primary">단계별 자격 보기 →</a>
-      <a href="https://cafe.naver.com/koreapaddleboard" target="_blank" rel="noopener" class="btn btn-ghost">과정 문의하기</a>
+      <a href="https://cafe.naver.com/koreapaddleboard" target="_blank" rel="noopener" class="btn btn-primary">과정 문의하기 →</a>
     </div>
   </div>
   <div class="waves" aria-hidden="true">
@@ -249,31 +236,31 @@
   <div class="wrap">
     <span class="eyebrow">Overview</span>
     <h2 class="sec-title">4단계 자격 시스템</h2>
-    <p class="sec-lead">각 과정은 모두 SUP를 안전하고 올바르게 지도하기 위해 설계되었습니다. 레벨1은 엄격하게 참여인원에 대한 제한을 두고 있지 않지만, 인트로(일반 강습) 과정과 장비 대여를 통해 최소 5회 이상의 SUP 세션 경험을 하신 분께 추천드립니다. 교육 수료 시 수료증 발급은 되지 않으며, 자격요건 서류와 당일 테스트를 모두 통과하실 경우 자격증이 발급됩니다.</p>
+    <p class="sec-lead">각 과정은 모두 SUP를 안전하고 올바르게 지도하기 위해 설계되었습니다.<br>레벨1은 엄격하게 참여인원에 대한 제한을 두고 있지 않지만, 인트로(일반 강습) 과정과 장비 대여를 통해 최소 5회 이상의 SUP 세션 경험을 하신 분께 추천드립니다. 교육 수료 시 수료증 발급은 되지 않으며, 자격요건 서류와 당일 테스트를 모두 통과하실 경우 자격증이 발급됩니다.</p>
     <div class="steps">
       <div class="step">
         <div class="num"><span class="badge">00</span><span class="lbl">STEP</span></div>
         <h3>인트로 과정</h3>
         <p>2시간 체험 위주의 일반인 커리큘럼. 강좌 수료 시 연맹 수료증을 발급합니다.</p>
-        <span class="tag">연맹 수료증</span>
+        <span class="tag">연맹 수료증 발급</span>
       </div>
       <div class="step">
         <div class="num"><span class="badge">01</span><span class="lbl">STEP</span></div>
         <h3>레벨1 강사과정</h3>
         <p>누구나 SUP를 올바르게 배우도록 지도하는 기본 강사 자격.</p>
-        <span class="tag">KSUPA 레벨1 SUP 전문강사</span>
+        <span class="tag">연맹 민간자격증 발급</span>
       </div>
       <div class="step">
         <div class="num"><span class="badge">02</span><span class="lbl">STEP</span></div>
         <h3>레벨2 강사과정</h3>
         <p>지도력과 고급 기술, 구조 능력을 검증. 소규모 클럽·대학 전공 지도가 가능합니다.</p>
-        <span class="tag">KSUPA 레벨2 SUP 전문강사</span>
+        <span class="tag">연맹 민간자격증 발급</span>
       </div>
       <div class="step">
         <div class="num"><span class="badge">03</span><span class="lbl">STEP</span></div>
         <h3>레벨3 강사과정</h3>
         <p>경기 운영·대회 기획·아카데미 운영까지. 지부 아카데미를 설립할 수 있습니다.</p>
-        <span class="tag">KSUPA 레벨3 SUP 전문강사</span>
+        <span class="tag">연맹 민간자격증 발급</span>
       </div>
     </div>
   </div>
@@ -284,7 +271,7 @@
   <div class="wrap">
     <span class="eyebrow">Requirements</span>
     <h2 class="sec-title">단계별 지원 자격</h2>
-    <p class="sec-lead">모든 강사과정(레벨1~3)은 한국직업능력개발원 민간자격 강사과정으로 운영됩니다. 공통으로 응급처치 및 심폐소생술(CPR) 일반과정 이수가 필요합니다.</p>
+    <p class="sec-lead">모든 강사과정(레벨1~3)은 한국직업능력개발원 민간자격 강사과정으로 운영됩니다.<br>공통으로 응급처치 및 심폐소생술(CPR) 일반과정 이수가 필요합니다.</p>
 
     <div class="levels">
 
