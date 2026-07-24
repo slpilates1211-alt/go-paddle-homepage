@@ -33,15 +33,15 @@ TEMPLATES = {
     "fragment": os.path.join(ASSETS, "announcement-fragment.html"),
 }
 
-# 접수 상태별 배지 색 (배경, 글자)
+# 접수 상태별 배지 색 (배경, 글자) — KSUPA 브랜드 팔레트(블루/레드) 기준
 STATUS_COLORS = {
-    "접수중":   ("#12b3a6", "#052b28"),  # 청록 - 진행중
-    "임박":     ("#f4a259", "#3d2400"),  # 주황 - 마감임박
+    "접수중":   ("#0e86c4", "#ffffff"),  # 브랜드 블루 - 진행중
+    "임박":     ("#ed1c24", "#ffffff"),  # 브랜드 레드 - 마감임박
     "마감":     ("#8a9aa6", "#ffffff"),  # 회색 - 접수마감
     "연기":     ("#8a9aa6", "#ffffff"),
     "완료":     ("#8a9aa6", "#ffffff"),
 }
-DEFAULT_STATUS_COLOR = ("#12b3a6", "#052b28")
+DEFAULT_STATUS_COLOR = ("#0e86c4", "#ffffff")
 
 
 def pick_status_color(status: str):
@@ -59,14 +59,14 @@ def build_notice_block(notices, fmt):
         # 인라인 스타일 버전 (게시판 붙여넣기용)
         items = "\n".join(
             f'          <li style="position:relative;padding-left:16px;font-size:14.5px;'
-            f'font-weight:600;color:#0a2a43;margin:4px 0;list-style:none;">'
-            f'<span style="position:absolute;left:2px;color:#12b3a6;font-weight:800;">·</span>'
+            f'font-weight:600;color:#082f4a;margin:4px 0;list-style:none;">'
+            f'<span style="position:absolute;left:2px;color:#0e86c4;font-weight:800;">·</span>'
             f'{html.escape(n)}</li>'
             for n in notices
         )
         return (
             '<div style="display:flex;padding:16px 0;border-bottom:1px solid #e2ebf1;">\n'
-            '      <div style="flex:0 0 auto;width:30px;height:30px;border-radius:9px;background:#d1495b;'
+            '      <div style="flex:0 0 auto;width:30px;height:30px;border-radius:9px;background:#ed1c24;'
             'color:#fff;text-align:center;line-height:30px;font-weight:800;font-size:14px;margin-right:14px;">!</div>\n'
             '      <div style="flex:1;"><div style="font-size:12.5px;font-weight:800;color:#5a6b76;'
             'letter-spacing:.04em;margin-bottom:5px;">안내사항</div>\n'

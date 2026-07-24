@@ -8,8 +8,8 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
 <style>
   :root{
-    --navy:#0a2a43;--ocean:#0e6ba8;--teal:#12b3a6;--sky:#eaf4fb;
-    --sand:#f6f9fb;--ink:#12222e;--muted:#5a6b76;--line:#e2ebf1;--white:#fff;
+    --navy:#082f4a;--ocean:#0e86c4;--red:#ed1c24;--sky:#e8f6fc;
+    --sand:#f5fafd;--ink:#12222e;--muted:#5a6b76;--line:#e2ebf1;--white:#fff;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   body{font-family:"Pretendard Variable",Pretendard,system-ui,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;
@@ -19,17 +19,17 @@
 
   /* header */
   .head{position:relative;color:#eaf6ff;padding:34px 30px 30px;
-    background:radial-gradient(700px 260px at 82% -20%,#1591c9 0,transparent 60%),
-      linear-gradient(155deg,#0a2a43 0%,#0e5a86 60%,#0a8f8c 120%)}
+    background:radial-gradient(700px 260px at 82% -20%,#29abe2 0,transparent 60%),
+      linear-gradient(155deg,#082f4a 0%,#0a6294 60%,#0a6294 120%)}
   .brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:14px;letter-spacing:.02em;color:#cfe8f5}
   .brand .mk{width:34px;height:34px;border-radius:10px;background:rgba(255,255,255,.16);
     display:grid;place-items:center;font-size:12.5px;font-weight:800;color:#fff}
   .status{display:inline-flex;align-items:center;gap:7px;margin-top:20px;
-    background:#12b3a6;color:#052b28;font-weight:800;font-size:13px;
+    background:#0e86c4;color:#ffffff;font-weight:800;font-size:13px;
     padding:7px 15px;border-radius:999px;letter-spacing:.02em}
   .status::before{content:"";width:8px;height:8px;border-radius:50%;background:currentColor}
   .head h1{margin:14px 0 4px;font-size:clamp(24px,5.4vw,32px);font-weight:800;letter-spacing:-.03em;line-height:1.2;color:#fff}
-  .head h1 b{color:#7fe3d5}
+  .head h1 b{color:#9bd7f2}
   .head .tagline{font-size:14px;color:#bfe0ef;font-weight:600;margin-top:6px}
 
   /* body */
@@ -49,16 +49,16 @@
   .sched .v{color:var(--ink);font-weight:600;text-align:right}
 
   .fee{font-size:20px;font-weight:800;color:var(--navy)}
-  .fee b{color:var(--teal)}
+  .fee b{color:var(--red)}
   .fee small{display:block;font-size:12.5px;font-weight:600;color:var(--muted);margin-top:5px}
-  .warn{color:#d1495b;font-weight:700}
+  .warn{color:#ed1c24;font-weight:700}
   .acct{background:var(--sky);border-radius:11px;padding:11px 14px;font-size:14.5px;
     font-weight:700;color:var(--navy);font-variant-numeric:tabular-nums;margin-top:4px}
   .acct span{display:block;font-size:12.5px;font-weight:600;color:var(--muted)}
   ul.notice{list-style:none;margin-top:2px}
   ul.notice li{position:relative;padding-left:16px;font-size:14.5px;font-weight:600;color:var(--navy);margin:4px 0}
-  ul.notice li::before{content:"·";position:absolute;left:4px;color:var(--teal);font-weight:800}
-  ul.notice li.warn::before{color:#d1495b}
+  ul.notice li::before{content:"·";position:absolute;left:4px;color:var(--red);font-weight:800}
+  ul.notice li.warn::before{color:#ed1c24}
   .contact{font-size:15px;font-weight:700;color:var(--navy)}
   .contact span{display:block;margin:2px 0;font-variant-numeric:tabular-nums}
   .contact .role{color:var(--muted);font-weight:600;font-size:13px}
@@ -66,7 +66,7 @@
   /* footer */
   .foot{background:var(--navy);color:#cfe0ec;text-align:center;padding:22px 20px 26px}
   .foot .line{font-size:14.5px;font-weight:800;color:#fff;letter-spacing:-.01em}
-  .foot .line b{color:#7fe3d5}
+  .foot .line b{color:#9bd7f2}
   .foot .sub{font-size:12.5px;color:#9db6c6;margin-top:6px}
   @media(max-width:480px){.body{padding:22px 20px 6px}.head{padding:28px 22px 26px}}
 </style>
