@@ -1,0 +1,484 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WPA SUP 강사과정 소개 | (사)대한패들보드연맹</title>
+<meta name="description" content="문화체육관광부 등록 민간자격 · WPA SUP(패들보드) 국제강사 과정 안내. 인트로 과정부터 레벨1·2·3 강사과정까지 단계별 자격요건과 응시 정보를 확인하세요.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+  :root{
+    --navy:#0a2a43;
+    --ocean:#0e6ba8;
+    --ocean-2:#0a9396;
+    --teal:#12b3a6;
+    --sky:#eaf4fb;
+    --sand:#f6f9fb;
+    --ink:#12222e;
+    --muted:#5a6b76;
+    --line:#e2ebf1;
+    --white:#ffffff;
+    --radius:18px;
+    --shadow:0 10px 30px rgba(10,42,67,.08);
+    --shadow-lg:0 20px 50px rgba(10,42,67,.14);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:"Pretendard Variable",Pretendard,system-ui,-apple-system,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+    color:var(--ink);background:var(--sand);line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:8px;
+    font-size:13px;font-weight:600;letter-spacing:.06em;
+    color:var(--ocean);text-transform:uppercase;
+  }
+  .eyebrow::before{content:"";width:26px;height:2px;background:var(--teal);border-radius:2px}
+  section{padding:72px 0}
+  h2.sec-title{font-size:30px;font-weight:800;letter-spacing:-.02em;margin:12px 0 10px;color:var(--navy)}
+  .sec-lead{color:var(--muted);max-width:640px;font-size:16px}
+
+  /* ---------- Top bar ---------- */
+  header.nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(255,255,255,.86);backdrop-filter:saturate(180%) blur(12px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .brand{display:flex;align-items:center;gap:12px;font-weight:800;color:var(--navy);letter-spacing:-.01em}
+  .brand .mark{
+    width:38px;height:38px;border-radius:11px;flex:0 0 auto;
+    background:linear-gradient(135deg,var(--ocean),var(--teal));
+    display:grid;place-items:center;color:#fff;font-weight:800;font-size:15px;
+    box-shadow:0 6px 16px rgba(14,107,168,.35)}
+  .brand small{display:block;font-size:11px;font-weight:600;color:var(--muted);letter-spacing:.02em}
+  .nav-links{display:flex;gap:26px;font-size:14.5px;font-weight:600;color:var(--muted)}
+  .nav-links a:hover{color:var(--ocean)}
+  @media(max-width:760px){.nav-links{display:none}}
+
+  /* ---------- Hero ---------- */
+  .hero{
+    position:relative;overflow:hidden;color:#eaf6ff;
+    background:radial-gradient(1200px 500px at 80% -10%,#1591c9 0%,transparent 60%),
+               linear-gradient(160deg,#0a2a43 0%,#0e5a86 55%,#0a8f8c 120%);
+  }
+  .hero .wrap{position:relative;z-index:2;padding-top:86px;padding-bottom:96px}
+  .hero .eyebrow{color:#8fe3d8}
+  .hero .eyebrow::before{background:#8fe3d8}
+  .hero h1{font-size:clamp(32px,5vw,52px);font-weight:800;letter-spacing:-.03em;line-height:1.12;margin:16px 0 18px}
+  .hero h1 span{color:#7fe3d5}
+  .hero p.sub{font-size:clamp(16px,2.2vw,19px);color:#cfe8f5;max-width:620px}
+  .hero-badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+  .chip{
+    display:inline-flex;align-items:center;gap:7px;
+    background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);
+    padding:8px 14px;border-radius:999px;font-size:13.5px;font-weight:600;color:#eaf6ff;backdrop-filter:blur(4px)}
+  .chip b{color:#7fe3d5;font-weight:700}
+  .hero-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:34px}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:13px 22px;border-radius:12px;font-weight:700;font-size:15px;transition:.18s}
+  .btn-primary{background:#12b3a6;color:#052b28;box-shadow:0 10px 24px rgba(18,179,166,.4)}
+  .btn-primary:hover{transform:translateY(-2px);background:#20c6b8}
+  .btn-ghost{background:rgba(255,255,255,.1);color:#eaf6ff;border:1px solid rgba(255,255,255,.28)}
+  .btn-ghost:hover{background:rgba(255,255,255,.18)}
+  .waves{position:absolute;left:0;right:0;bottom:-1px;z-index:1;line-height:0}
+  .waves svg{width:100%;height:70px;display:block}
+
+  /* ---------- Steps / 4단계 ---------- */
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:34px}
+  @media(max-width:860px){.steps{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:480px){.steps{grid-template-columns:1fr}}
+  .step{
+    position:relative;background:var(--white);border:1px solid var(--line);border-radius:var(--radius);
+    padding:22px 20px;box-shadow:var(--shadow);transition:.2s}
+  .step:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);border-color:#cfe6f2}
+  .step .num{font-size:12px;font-weight:800;color:var(--teal);letter-spacing:.08em}
+  .step h3{font-size:18px;font-weight:800;color:var(--navy);margin:8px 0 6px;letter-spacing:-.01em}
+  .step p{font-size:13.5px;color:var(--muted)}
+  .step .tag{display:inline-block;margin-top:14px;font-size:12px;font-weight:700;color:var(--ocean);
+    background:var(--sky);padding:5px 10px;border-radius:8px}
+
+  /* ---------- Level detail cards ---------- */
+  .levels{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:34px}
+  @media(max-width:820px){.levels{grid-template-columns:1fr}}
+  .lv{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+  .lv-head{padding:22px 24px;display:flex;align-items:center;gap:14px;color:#fff}
+  .lv1 .lv-head{background:linear-gradient(120deg,#0e6ba8,#1591c9)}
+  .lv2 .lv-head{background:linear-gradient(120deg,#0a7d8c,#12b3a6)}
+  .lv3 .lv-head{background:linear-gradient(120deg,#0a2a43,#0e5a86)}
+  .lv0 .lv-head{background:linear-gradient(120deg,#4a6b7c,#6b8ea0)}
+  .lv-badge{width:46px;height:46px;border-radius:12px;background:rgba(255,255,255,.18);
+    display:grid;place-items:center;font-weight:800;font-size:15px;flex:0 0 auto}
+  .lv-head h3{font-size:19px;font-weight:800;letter-spacing:-.01em}
+  .lv-head small{display:block;font-size:12.5px;font-weight:600;opacity:.85;margin-top:2px}
+  .lv-body{padding:20px 24px 24px}
+  .req-title{font-size:12px;font-weight:800;letter-spacing:.05em;color:var(--muted);text-transform:uppercase;margin:2px 0 10px}
+  ul.req{list-style:none;display:grid;gap:9px}
+  ul.req li{position:relative;padding-left:24px;font-size:14.3px;color:var(--ink)}
+  ul.req li::before{content:"";position:absolute;left:0;top:8px;width:14px;height:14px;border-radius:5px;
+    background:var(--sky);border:2px solid var(--teal)}
+  ul.req li b{color:var(--navy)}
+  .lv-meta{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 6px}
+  .metapill{font-size:12.5px;font-weight:700;background:var(--sand);border:1px solid var(--line);
+    color:var(--navy);padding:6px 11px;border-radius:9px}
+  .can-do{margin-top:16px;background:var(--sand);border:1px dashed #cfe0ea;border-radius:12px;padding:14px 16px}
+  .can-do .req-title{color:var(--ocean)}
+  .can-do ul{list-style:none;display:grid;gap:7px}
+  .can-do li{position:relative;padding-left:22px;font-size:13.6px;color:var(--muted)}
+  .can-do li::before{content:"✓";position:absolute;left:0;top:0;color:var(--teal);font-weight:800}
+
+  /* ---------- Info / fee ---------- */
+  .grid2{display:grid;grid-template-columns:1.15fr .85fr;gap:22px;margin-top:34px}
+  @media(max-width:820px){.grid2{grid-template-columns:1fr}}
+  .card{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:26px;box-shadow:var(--shadow)}
+  .card h3{font-size:18px;font-weight:800;color:var(--navy);margin-bottom:16px;display:flex;align-items:center;gap:9px}
+  .card h3 .dot{width:9px;height:9px;border-radius:50%;background:var(--teal)}
+  dl.info{display:grid;grid-template-columns:auto 1fr;gap:11px 18px;font-size:14.2px}
+  dl.info dt{color:var(--muted);font-weight:600;white-space:nowrap}
+  dl.info dd{color:var(--ink);font-weight:600}
+  .fee-row{display:flex;justify-content:space-between;align-items:baseline;padding:13px 0;border-bottom:1px dashed var(--line)}
+  .fee-row:last-child{border-bottom:0}
+  .fee-row .label{font-size:14.3px;color:var(--ink);font-weight:600}
+  .fee-row .amt{font-size:16px;font-weight:800;color:var(--ocean)}
+  .fee-row .amt small{font-size:12px;color:var(--muted);font-weight:600}
+  .note{margin-top:14px;font-size:12.7px;color:var(--muted);background:var(--sky);border-radius:10px;padding:11px 13px}
+
+  /* ---------- Must-know callout ---------- */
+  .must{background:linear-gradient(140deg,#0a2a43,#0e5a86);color:#eaf6ff;border-radius:24px;padding:40px 34px;
+    box-shadow:var(--shadow-lg);position:relative;overflow:hidden}
+  .must .eyebrow{color:#8fe3d8}.must .eyebrow::before{background:#8fe3d8}
+  .must h2{color:#fff;font-size:26px;font-weight:800;margin:12px 0 22px;letter-spacing:-.02em}
+  .must-list{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media(max-width:640px){.must-list{grid-template-columns:1fr}}
+  .must-item{display:flex;gap:13px;align-items:flex-start;background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.16);border-radius:14px;padding:16px 18px}
+  .must-item .n{width:28px;height:28px;border-radius:8px;background:#12b3a6;color:#052b28;
+    display:grid;place-items:center;font-weight:800;font-size:14px;flex:0 0 auto}
+  .must-item p{font-size:14.5px;color:#e7f4fb;font-weight:600}
+
+  /* ---------- Footer ---------- */
+  footer{background:var(--navy);color:#c6d7e2;padding:50px 0 40px}
+  .foot-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:30px}
+  @media(max-width:760px){.foot-grid{grid-template-columns:1fr}}
+  footer h4{color:#fff;font-size:15px;font-weight:800;margin-bottom:14px}
+  footer p,footer a{font-size:13.8px;line-height:1.9;color:#adc2d0}
+  footer a:hover{color:#7fe3d5}
+  .foot-bottom{border-top:1px solid rgba(255,255,255,.1);margin-top:36px;padding-top:22px;
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:12.5px;color:#7f97a6}
+  .foot-brand{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+  .foot-brand .mark{width:40px;height:40px;border-radius:11px;background:linear-gradient(135deg,var(--ocean),var(--teal));
+    display:grid;place-items:center;color:#fff;font-weight:800}
+  .foot-brand b{color:#fff;font-size:16px}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="nav">
+  <div class="wrap nav-inner">
+    <div class="brand">
+      <div class="mark">WPA</div>
+      <div>대한패들보드연맹<small>WPA SUP 강사과정</small></div>
+    </div>
+    <nav class="nav-links">
+      <a href="#overview">과정 체계</a>
+      <a href="#levels">단계별 자격</a>
+      <a href="#info">자격·응시 정보</a>
+      <a href="#contact">문의</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="wrap">
+    <span class="eyebrow">WPA SUP Instructor Program</span>
+    <h1>물 위의 전문가로,<br><span>SUP 강사과정</span>을 시작하세요</h1>
+    <p class="sub">(사)대한패들보드연맹은 SUP를 안전하고 올바르게 지도하기 위한 4단계 강사 양성 체계를 운영합니다. 체험 과정부터 WPA 국제강사 자격까지, 단계별로 성장하세요.</p>
+    <div class="hero-badges">
+      <span class="chip">🏅 문화체육관광부 <b>등록 민간자격</b></span>
+      <span class="chip">등록번호 <b>2017-003009</b></span>
+      <span class="chip">🌏 <b>WPA 국제강사</b> 자격 연계</span>
+    </div>
+    <div class="hero-cta">
+      <a href="#levels" class="btn btn-primary">단계별 자격 보기 →</a>
+      <a href="#contact" class="btn btn-ghost">과정 문의하기</a>
+    </div>
+  </div>
+  <div class="waves" aria-hidden="true">
+    <svg viewBox="0 0 1440 70" preserveAspectRatio="none"><path fill="#f6f9fb" d="M0,40 C240,75 480,10 720,32 C960,54 1200,72 1440,38 L1440,70 L0,70 Z"></path></svg>
+  </div>
+</div>
+
+<!-- OVERVIEW -->
+<section id="overview">
+  <div class="wrap">
+    <span class="eyebrow">Overview</span>
+    <h2 class="sec-title">4단계 자격 체계</h2>
+    <p class="sec-lead">각 과정은 모두 SUP를 안전하고 올바르게 지도하기 위해 설계되었습니다. 레벨1은 참가 제한이 엄격하지 않지만, 자격증 취득을 원하는 경우 자격요건 서류와 당일 테스트를 모두 통과해야 합니다.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="num">STEP 00</div>
+        <h3>인트로 과정</h3>
+        <p>2시간 체험 위주의 일반인 커리큘럼. 강좌 수료 시 연맹 수료증을 발급합니다.</p>
+        <span class="tag">연맹 수료증</span>
+      </div>
+      <div class="step">
+        <div class="num">STEP 01</div>
+        <h3>레벨1 강사과정</h3>
+        <p>누구나 SUP를 올바르게 배우도록 지도하는 기본 강사 자격. 민간·국제 자격으로 구분.</p>
+        <span class="tag">WPA 레벨1 국제강사</span>
+      </div>
+      <div class="step">
+        <div class="num">STEP 02</div>
+        <h3>레벨2 강사과정</h3>
+        <p>지도력과 고급 기술, 구조 능력을 검증. 소규모 클럽·대학 전공 지도가 가능합니다.</p>
+        <span class="tag">WPA 레벨2 국제강사</span>
+      </div>
+      <div class="step">
+        <div class="num">STEP 03</div>
+        <h3>레벨3 강사과정</h3>
+        <p>경기 운영·대회 기획·아카데미 운영까지. 지부 아카데미를 설립할 수 있습니다.</p>
+        <span class="tag">WPA 레벨3 국제강사</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LEVELS -->
+<section id="levels" style="background:var(--white);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div class="wrap">
+    <span class="eyebrow">Requirements</span>
+    <h2 class="sec-title">단계별 지원 자격</h2>
+    <p class="sec-lead">모든 강사과정(레벨1~3)은 한국직업능력개발원 민간자격 강사과정으로 운영됩니다. 공통으로 응급처치 및 심폐소생술(CPR) 일반과정 이수가 필요합니다.</p>
+
+    <div class="levels">
+
+      <!-- LEVEL 1 -->
+      <article class="lv lv1">
+        <div class="lv-head">
+          <div class="lv-badge">L1</div>
+          <div><h3>레벨1 강사과정</h3><small>WPA 레벨1 국제강사 · 기본 지도자</small></div>
+        </div>
+        <div class="lv-body">
+          <div class="req-title">지원 자격</div>
+          <ul class="req">
+            <li>응급처치 및 <b>심폐소생술(CPR)</b> 일반과정 이수</li>
+            <li><b>8시간</b> 레벨1 강사교육 수강 및 수료</li>
+            <li>이론시험 <b>70점 이상</b> · 실기 <b>80점 이상</b></li>
+            <li>온라인 안전교육 1시간 이수 <b>(계획중)</b></li>
+            <li>베이직 스킬 1 — 발 위치·허리 각도·어깨 회전</li>
+            <li>베이직 스킬 2 — Set-Catch-Pull &amp; Push-Exit-Recovery</li>
+            <li>베이직 스킬 3 — 베이직 턴 좌/우</li>
+          </ul>
+          <div class="lv-meta">
+            <span class="metapill">🏊 피지컬 3KM · 남 40분 / 여 45분</span>
+            <span class="metapill">🔁 자격유지 2년 · 보수교육 6점(6h)</span>
+          </div>
+          <div class="can-do">
+            <div class="req-title">레벨1 강사는 이런 활동이 가능합니다</div>
+            <ul>
+              <li>인트로 코스 및 일반 고객 지도</li>
+              <li>연맹 주최·주관 대회 운영요원 활동</li>
+              <li>레벨1 과정 보조강사 참가</li>
+              <li>인트로 보조강사 2회 입회 후 레벨2 지원 가능</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <!-- LEVEL 2 -->
+      <article class="lv lv2">
+        <div class="lv-head">
+          <div class="lv-badge">L2</div>
+          <div><h3>레벨2 강사과정</h3><small>WPA 레벨2 국제강사 · 지도력 검증</small></div>
+        </div>
+        <div class="lv-body">
+          <div class="req-title">지원 자격</div>
+          <ul class="req">
+            <li>응급처치 및 <b>심폐소생술(CPR)</b> 일반과정 이수</li>
+            <li><b>8시간</b> 강좌 수료 · 이론시험 <b>70% 이상</b></li>
+            <li>지도력 1 — 인트로 보조강사 1회 <b>(프렌드십 검증)</b></li>
+            <li>지도력 2 — 인트로 주강사 1회 <b>(리더십 검증)</b></li>
+            <li>지도력 3 — 레벨1 보조강사 1회 <b>(코스 매니지먼트)</b></li>
+            <li>고급기술 1 — 3가지 패들링 테크닉</li>
+            <li>고급기술 2 — 마크 라운딩</li>
+            <li>구조능력 — SUP 구조기술 구현</li>
+          </ul>
+          <div class="lv-meta">
+            <span class="metapill">🏊 피지컬 4KM · 남 50분 / 여 55분</span>
+            <span class="metapill">🔁 자격유지 2년 · 보수교육 6점(6h)</span>
+          </div>
+          <div class="can-do">
+            <div class="req-title">레벨2 강사는 이런 활동이 가능합니다</div>
+            <ul>
+              <li>소규모 클럽·대학 전공과목 지도</li>
+              <li>연맹 주최·주관 대회 운영위원 활동</li>
+              <li>연맹 관리·감독 하에 레벨1 과정 지도</li>
+              <li>레벨3 과정 지원 가능</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <!-- LEVEL 3 -->
+      <article class="lv lv3">
+        <div class="lv-head">
+          <div class="lv-badge">L3</div>
+          <div><h3>레벨3 강사과정</h3><small>WPA 레벨3 국제강사 · 아카데미 운영</small></div>
+        </div>
+        <div class="lv-body">
+          <div class="req-title">지원 자격</div>
+          <ul class="req">
+            <li>응급처치 및 <b>심폐소생술(CPR)</b> 일반과정 이수</li>
+            <li><b>2일 16시간</b> 강좌 수료 · 이론시험 <b>80% 이상</b></li>
+            <li>지도력 1 — 레벨1 보조강사 3회 <b>(코스 매니지먼트)</b></li>
+            <li>지도력 2 — 레벨1 주강사 5회 <b>(참가자 만족도 80%↑)</b></li>
+            <li>경기운영 — 다양한 환경에서의 경기 운영 능력</li>
+            <li>대회기획 — 예산에 맞는 효과적 대회 기획</li>
+            <li>아카데미운영 — 지역·장비 현황 기반 운영 능력</li>
+          </ul>
+          <div class="lv-meta">
+            <span class="metapill">🏊 피지컬 4KM · 남 30분 / 여 40분</span>
+          </div>
+          <div class="can-do">
+            <div class="req-title">레벨3 강사는 이런 활동이 가능합니다</div>
+            <ul>
+              <li>대학 전공과목 지도</li>
+              <li>연맹 승인 하에 레벨1·2 과정 직접 개최</li>
+              <li>지부 아카데미 설립</li>
+              <li>연맹 주최·주관 대회 운영위원 활동</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <!-- INTRO -->
+      <article class="lv lv0">
+        <div class="lv-head">
+          <div class="lv-badge">00</div>
+          <div><h3>인트로 과정</h3><small>일반인 체험 커리큘럼 · 입문</small></div>
+        </div>
+        <div class="lv-body">
+          <div class="req-title">과정 안내</div>
+          <ul class="req">
+            <li><b>2시간</b> 체험 위주의 강좌</li>
+            <li>강좌 수료 시 <b>연맹 수료증</b> 발급</li>
+            <li>SUP를 처음 접하는 누구나 참여 가능</li>
+            <li>레벨1 강사과정으로 이어지는 첫 단계</li>
+          </ul>
+          <div class="can-do">
+            <div class="req-title">이런 분께 추천합니다</div>
+            <ul>
+              <li>SUP를 안전하게 처음 배우고 싶은 일반인</li>
+              <li>강사과정 진입 전 체험을 원하는 예비 지원자</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="note" style="margin-top:22px">
+      ※ WPA 국제강사 자격증 발급 희망 시 국제연맹 등록 추가비용이 필요합니다 — <b>레벨1·2 각 75달러(미화)</b>, <b>레벨3 7만 원</b> (모두 2년 주기 갱신).
+    </div>
+  </div>
+</section>
+
+<!-- INFO + FEE -->
+<section id="info">
+  <div class="wrap">
+    <span class="eyebrow">Certification</span>
+    <h2 class="sec-title">자격 및 응시 정보</h2>
+    <p class="sec-lead">한국능력개발원 민간자격 표시사항입니다. 자격 취득 전 아래 정보를 반드시 확인하세요.</p>
+
+    <div class="grid2">
+      <div class="card">
+        <h3><span class="dot"></span>자격 정보</h3>
+        <dl class="info">
+          <dt>자격명</dt><dd>SUP(패들보드) 국제강사</dd>
+          <dt>자격 종류</dt><dd>등록(비공인) 민간자격</dd>
+          <dt>등록번호</dt><dd>2017-003009 (문화체육관광부)</dd>
+          <dt>발급기관</dt><dd>(사)대한패들보드연맹</dd>
+          <dt>환불 규정</dt><dd>과오납한 경우를 제외하고 반환 불가</dd>
+          <dt>민간자격 조회</dt><dd><a href="https://www.pqi.or.kr" target="_blank" rel="noopener" style="color:var(--ocean);font-weight:700;border-bottom:1px solid #bfe0d9">민간자격정보서비스 (pqi.or.kr) ↗</a></dd>
+        </dl>
+      </div>
+
+      <div class="card">
+        <h3><span class="dot"></span>검정 응시료</h3>
+        <div class="fee-row">
+          <span class="label">실기 + 필기 <small style="color:var(--muted)">(기본 응시)</small></span>
+          <span class="amt">400,000<small>원</small></span>
+        </div>
+        <div class="fee-row">
+          <span class="label">실기 재응시</span>
+          <span class="amt">100,000<small>원</small></span>
+        </div>
+        <div class="fee-row">
+          <span class="label">필기 재응시</span>
+          <span class="amt">50,000<small>원</small></span>
+        </div>
+        <div class="note">응시료는 실기·필기 검정에 대한 비용이며, 국제강사 자격 발급을 위한 국제연맹 등록비용은 별도입니다.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MUST KNOW -->
+<section style="padding-top:20px">
+  <div class="wrap">
+    <div class="must">
+      <span class="eyebrow">Key Points</span>
+      <h2>이것만은 반드시!</h2>
+      <div class="must-list">
+        <div class="must-item"><div class="n">1</div><p>2017년 문화체육관광부에 정식 등록된 <b>민간자격 발급단체</b></p></div>
+        <div class="must-item"><div class="n">2</div><p>인트로 · 레벨1 · 레벨2 · 레벨3, <b>총 4가지 교육 과정</b>으로 구분</p></div>
+        <div class="must-item"><div class="n">3</div><p>과정마다 다른 <b>단계별 자격요건</b>을 정확히 인지</p></div>
+        <div class="must-item"><div class="n">4</div><p>WPA 국제강사 자격은 <b>별도의 자격 등록비용</b>이 필요</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER / CONTACT -->
+<footer id="contact">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">
+          <div class="mark">WPA</div>
+          <div><b>(사)대한패들보드연맹</b><br><span style="font-size:12.5px">WPA Korea · SUP Instructor Program</span></div>
+        </div>
+        <p>SUP를 안전하고 올바르게 지도하기 위한 국제 표준 강사 양성 기관입니다. 인트로부터 레벨3까지 단계별 성장 경로를 제공합니다.</p>
+      </div>
+      <div>
+        <h4>자격관리 기관</h4>
+        <p>
+          대표자 · 옥덕필<br>
+          연락처 · <a href="tel:010-6216-8640">010-6216-8640</a><br>
+          이메일 · <a href="mailto:kor22@naver.com">kor22@naver.com</a><br>
+          홈페이지 · <a href="https://www.wpakorea.org" target="_blank" rel="noopener">www.wpakorea.org ↗</a>
+        </p>
+      </div>
+      <div>
+        <h4>소재지</h4>
+        <p>서울시 강남구 논현로 523<br>노바빌딩 지하</p>
+        <h4 style="margin-top:18px">바로가기</h4>
+        <p><a href="https://www.pqi.or.kr" target="_blank" rel="noopener">민간자격정보서비스 ↗</a></p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2017–<span id="yr"></span> (사)대한패들보드연맹 (WPA Korea). All rights reserved.</span>
+      <span>등록번호 2017-003009 · 문화체육관광부</span>
+    </div>
+  </div>
+</footer>
+
+<script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
+</body>
+</html>
