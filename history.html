@@ -23,9 +23,23 @@
   .ks-hist .ks-m{flex:0 0 60px;}
   .ks-hist .ks-c{flex:0 0 96px;text-align:center;}
 }
+/* ===== TOP 버튼 ===== */
+html{scroll-behavior:smooth;}
+.ks-hist .ks-top-btn{position:fixed;right:22px;bottom:22px;z-index:9999;
+  width:52px;height:52px;border-radius:50%;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;gap:1px;text-decoration:none;
+  background:#0E86C4;color:#fff;box-shadow:0 8px 20px rgba(8,47,74,.30);
+  transition:opacity .2s,visibility .2s,transform .2s,background .2s;}
+.ks-hist .ks-top-btn:hover{background:#0A6294;transform:translateY(-3px);}
+.ks-hist .ks-top-btn.js-hidden{opacity:0;visibility:hidden;}
+.ks-hist .ks-top-btn .ks-arw{font-size:14px;line-height:1;}
+.ks-hist .ks-top-btn .ks-lbl{font-size:9.5px;font-weight:800;letter-spacing:.1em;}
+@media(max-width:480px){.ks-hist .ks-top-btn{right:16px;bottom:16px;width:46px;height:46px;}}
 </style>
 
 <div class="ks-hist">
+  <span id="ks-top"></span>
+  <a href="#ks-top" class="ks-top-btn" aria-label="맨 위로"><span class="ks-arw">▲</span><span class="ks-lbl">TOP</span></a>
   <section class="ks-year">
     <h3>2025</h3>
     <ul>
@@ -212,3 +226,14 @@
     </ul>
   </section>
 </div>
+
+<script>
+(function(){
+  var t=document.querySelector('.ks-hist .ks-top-btn');
+  if(!t) return;
+  t.classList.add('js-hidden');               // 스크립트 작동 시: 처음엔 숨김
+  function tog(){ t.classList.toggle('js-hidden', !(window.scrollY>300)); }
+  window.addEventListener('scroll',tog,{passive:true}); tog();
+  t.addEventListener('click',function(e){ e.preventDefault(); window.scrollTo({top:0,behavior:'smooth'}); });
+})();
+</script>
