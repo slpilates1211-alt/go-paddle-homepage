@@ -25,7 +25,13 @@ import os
 import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-TEMPLATE = os.path.join(HERE, "..", "assets", "announcement-template.html")
+ASSETS = os.path.join(HERE, "..", "assets")
+TEMPLATES = {
+    # 완결형 페이지: 파일로 열거나 저장소 페이지로 커밋해 쓰는 용도
+    "page": os.path.join(ASSETS, "announcement-template.html"),
+    # 붙여넣기용 조각: <style> 없이 인라인 스타일만 — 게시판 HTML 모드에 붙여넣어도 안 깨짐
+    "fragment": os.path.join(ASSETS, "announcement-fragment.html"),
+}
 
 # 접수 상태별 배지 색 (배경, 글자)
 STATUS_COLORS = {
@@ -45,13 +51,31 @@ def pick_status_color(status: str):
     return DEFAULT_STATUS_COLOR
 
 
-def build_notice_block(notices):
-    """추가 안내사항이 있으면 번호 없는 안내 항목 블록을 만든다."""
+def build_notice_block(notices, fmt):
+    """추가 안내사항이 있으면 안내 항목 블록을 만든다. 형식에 따라 마크업이 다르다."""
     if not notices:
         return ""
-    items = "\n".join(
-        f'          <li>{html.escape(n)}</li>' for n in notices
-    )
+    if fmt == "fragment":
+        # 인라인 스타일 버전 (게시판 붙여넣기용)
+        items = "\n".join(
+            f'          <li style="position:relative;padding-left:16px;font-size:14.5px;'
+            f'font-weight:600;color:#0a2a43;margin:4px 0;list-style:none;">'
+            f'<span style="position:absolute;left:2px;color:#12b3a6;font-weight:800;">·</span>'
+            f'{html.escape(n)}</li>'
+            for n in notices
+        )
+        return (
+            '<div style="display:flex;padding:16px 0;border-bottom:1px solid #e2ebf1;">\n'
+            '      <div style="flex:0 0 auto;width:30px;height:30px;border-radius:9px;background:#d1495b;'
+            'color:#fff;text-align:center;line-height:30px;font-weight:800;font-size:14px;margin-right:14px;">!</div>\n'
+            '      <div style="flex:1;"><div style="font-size:12.5px;font-weight:800;color:#5a6b76;'
+            'letter-spacing:.04em;margin-bottom:5px;">안내사항</div>\n'
+            f'        <ul style="margin:0;padding:0;">\n{items}\n        </ul>\n'
+            '      </div>\n'
+            '    </div>\n'
+        )
+    # page 버전 (announcement-template.html 의 CSS 클래스 사용)
+    items = "\n".join(f'          <li>{html.escape(n)}</li>' for n in notices)
     return (
         '<div class="item">\n'
         '      <div class="no">!</div>\n'
@@ -72,10 +96,12 @@ def main():
     p.add_argument("--venue", required=True, help='장소, 예: "뚝섬 윈드서핑장 44호 (카이트존스포츠)"')
     p.add_argument("--status", default="신청 접수중", help='접수 상태 (기본: 신청 접수중)')
     p.add_argument("--notice", action="append", default=[], help="추가 안내사항 (여러 번 사용 가능)")
+    p.add_argument("--format", choices=["page", "fragment"], default="page",
+                   help='page=완결형 HTML 파일(기본), fragment=게시판 붙여넣기용 인라인 조각')
     p.add_argument("--out", help="저장 경로 (생략 시 표준출력)")
     args = p.parse_args()
 
-    with open(TEMPLATE, encoding="utf-8") as f:
+    with open(TEMPLATES[args.format], encoding="utf-8") as f:
         tpl = f.read()
 
     bg, fg = pick_status_color(args.status)
@@ -87,7 +113,7 @@ def main():
         "{{STATUS}}": html.escape(args.status),
         "{{STATUS_BG}}": bg,
         "{{STATUS_FG}}": fg,
-        "{{NOTICE_BLOCK}}": build_notice_block(args.notice),
+        "{{NOTICE_BLOCK}}": build_notice_block(args.notice, args.format),
     }
     for k, v in repl.items():
         tpl = tpl.replace(k, v)
